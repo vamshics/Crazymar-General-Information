@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>file</title>
+</head>
+<body>
+<table border="1" align="center" >
+    <tr>
+        <th>Job Title</th> <th>Company Name</th> <th>Category</th>
+        <th>Position</th> <th>Experience</th> <th>No of Vacancy</th>
+        <th>Package</th> <th>Comapny_Logo</th> <th>Job_Type</th>
+        <th>Min Qualification</th> <th>Skills</th> <th>Email</th>
+        <th>Ph Number</th> <th>Land line</th> <th>Website Link</th>
+        <th>Address</th> <th>City</th> <th>State</th>
+        <th>Country</th> <th>Zip-Code</th> <th>Facebook</th>
+        <th>Google +</th> <th>Twitter</th> <th>LinkedIn</th>
+        <th>Pinterest</th> <th>Instagram</th>
+        <th>Action_1</th> <th>Action_2</th>
+    </tr>
+    {% for x in rvk %}
+    <tr>
+    <td>{{x.jobtitle}}</td> <td>{{x.company_name}}</td> <td>{{x.Category}}</td>
+    <td>{{x.Position}}</td> <td>{{x.Experience}}</td> <td>{{x.NoOfVacancy}}</td>
+    <td>{{x.Package}}</td> <td>{{x.CompanyLogo}}</td> <td>{{x.JobType}}</td>
+   <td>{{x.MinQualification}}</td>
+   <td>{{x.Skills}}</td><td>{{x.maill1}}</td>
+   <td>{{x.phoneNo}}</td>
+   <td>{{x.landline}}</td>
+   <td>{{x.website}}</td>
+   <td>{{x.addresss}}</td>
+   <td>{{x.city}}</td>
+   <td>{{x.state}}</td>
+   <td>{{x.country}}</td>
+   <td>{{x.zipcode}}</td>
+   <td>{{x.fb}}</td>
+   <td>{{x.ggleplus2}}</td>
+   <td>{{x.twitter}}</td>
+   <td>{{x.linkedin1}}</td>
+   <td>{{x.pininterest1}}</td>
+   <td>{{x.instagramm}}</td>
+{#        <td><center><a href="{% url 'edits' x.id %}">Edit</a></center></td>#}
+{#        <td><center><a href="{% url 'del' x.id %}">Delete</a></center></td>#}
+    <form action="{% url 'edits' x.id %}">
+        <td><center><button type="submit" >Edit</button></center></td></form>
+        <form action="{% url 'del' x.id %}">
+        <td><center><button type="submit"  href="{% url 'del' x.id %}">Delete</button></center></td></form>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
